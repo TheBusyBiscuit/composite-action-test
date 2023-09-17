@@ -1,0 +1,25 @@
+name: "Test action"
+
+inputs:
+  text:
+    description: "Text"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout the target repository
+      uses: actions/checkout@v3
+      with:
+        repository: TheBusyBiscuit/composite-action-test
+        fetch-depth: 0
+
+    - name: Install Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: "16"
+
+    - name: Run test script
+      shell: bash
+      run: |
+        node index.js {{ inputs.text }}

@@ -16,4 +16,4 @@ jobs:
       - name: Checkout repository
         uses: TheBusyBiscuit/composite-action-test@master
         with:
-          text: { { github.event.inputs.text } }
+          text: ${{ github.event.inputs.text }}

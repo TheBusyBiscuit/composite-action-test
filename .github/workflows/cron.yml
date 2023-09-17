@@ -1,0 +1,16 @@
+name: Test workflow automatic
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: TheBusyBiscuit/composite-action-test@master
+        with:
+          text: "Lorem ipsum dolor"

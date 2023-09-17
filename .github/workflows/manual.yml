@@ -1,0 +1,19 @@
+name: Test workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: "Some text"
+        required: true
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: TheBusyBiscuit/composite-action-test@master
+        with:
+          text: { { github.event.inputs.text } }

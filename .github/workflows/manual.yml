@@ -5,7 +5,7 @@ on:
     inputs:
       text:
         description: "Some text"
-        required: true
+        required: false
 
 jobs:
   test:

@@ -3,7 +3,7 @@ name: "Test action"
 inputs:
   text:
     description: "Text"
-    required: true
+    required: false
 
 runs:
   using: "composite"
@@ -22,4 +22,5 @@ runs:
     - name: Run test script
       shell: bash
       run: |
-        node index.js {{ inputs.text }}
+        echo "Raw input: {{ inputs.text }}"
+        echo "Parsed input: {{ inputs.text || 'Hello world' }}"

@@ -22,5 +22,5 @@ runs:
     - name: Run test script
       shell: bash
       run: |
-        echo "Raw input: {{ inputs.text }}"
-        echo "Parsed input: {{ inputs.text || 'Hello world' }}"
+        echo "Raw input: ${{ inputs.text }}"
+        echo "Parsed input: ${{ inputs.text || 'Hello world' }}"
